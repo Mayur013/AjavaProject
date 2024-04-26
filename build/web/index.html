@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+<script>
+function closeWindow() {
+    window.close();
+}
+function redirectToRegisterPage() {
+            // Specify the URL of the destination HTML page
+            var destinationURL = "RegisterHt.html";
+
+            // Redirect to the destination page
+            window.location.href = destinationURL;
+        }
+</script>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    body {
+        display: flex; /* Use flexbox */
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1;
+    background-image: url('images/first page background(1).png');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    
+    width: 30%;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+
+
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sign In</h1>
+        <form action="Login" method="get">
+            <div class="form-group row">
+                <label for="email" class="col-sm-3 col-form-label">Email:</label>
+                <div class="col-sm-9">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+                </div>
+                
+            </div>
+            <div class="form-group row">
+                <label for="password" class="col-sm-3 col-form-label">Password:</label>
+                <div class="col-sm-9">
+                <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+                </div>
+            </div>
+            <div class="form-group row d-flex justify-content-between mx-auto">
+                  <input type="submit" class="btn btn-primary" value="LogIn"/>
+                  <input type="reset" class="btn btn-danger" value="Clear"/>
+                  <input type="button" onclick="redirectToRegisterPage()" class="btn btn-info" value="SignUp"/>
+             </div>
+<!--            <div class="form-group row d-flex justify-content-end mx-auto">
+                  <input type="button" class="btn btn-primary" value="Forgot PassWord?"/>
+             </div>-->
+
+        </form>
+    </div>
+</body>
+</html>

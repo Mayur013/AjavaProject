@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up</title>
+<script>
+function closeWindow() {
+    
+        window.close();
+    
+}
+function redirectToLoginPage() {
+            // Specify the URL of the destination HTML page
+            var destinationURL = "index.html";
+
+            // Redirect to the destination page
+            window.location.href = destinationURL;
+        }
+        
+document.getElementById("mobile").addEventListener("keypress", function() {
+        var isValidMobile = validateMobileNumber(document.getElementById("mobile").value);
+//        var mobileError = document.getElementById("mobileError");
+//        mobileError.innerHTML=document.getElementById("mobile").value;
+    });
+
+   
+
+    
+function ccl() {
+        // Validate mobile number
+        var mobileInput = document.getElementById("mobile").value;
+        var isValidMobile = validateMobileNumber(mobileInput);
+//        var userInput = prompt("Please enter your name:", "John Doe");
+
+        if (!isValidMobile) {
+            // Prevent form submission if mobile number is invalid
+            event.preventDefault();
+            return;
+        }
+
+        // Proceed with executing the servlet
+        // You can add your servlet execution code here
+    };
+
+    function validateMobileNumber(mobileInput) {
+        // Regular expression to validate mobile number (10 digits)
+        var mobileRegex = /^\d{10}$/;
+        if (!mobileRegex.test(mobileInput)) {
+            alert("Please enter a valid 10-digit mobile number.");
+
+//            document.getElementById("mobileError").textContent = "Please enter a valid 10-digit mobile number.";
+            return false;
+        } else {
+//            document.getElementById("mobileError").textContent = "";
+            return true;
+        }
+    }
+</script>
+<!-- Add your CSS styles here -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    body {
+        display: flex; /* Use flexbox */
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1;
+    background-image: url('images/first page background(1).png');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+
+
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>Register</h1>
+        <form action="Register" >
+            <div class="form-group row">
+                <label for="name" class="col-sm-3 col-form-label">Name:</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
+                </div>  
+            </div>
+            <div class="form-group row">
+                <label for="email" class="col-sm-3 col-form-label">Email:</label>
+                <div class="col-sm-9">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+                </div>  
+            </div>
+            <div class="form-group row">
+                <label for="mobile" class="col-sm-3 col-form-label">Mobile Number:</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="mobile" name="mobile" placeholder="Mobile Number" required>
+<!--                    <span id="mobileError" class=" alert-danger"></span>-->
+                </div>  
+            </div>
+            <div class="form-group row">
+                <label for="address" class="col-sm-3 col-form-label">Address:</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="address" name="address" placeholder="Address" required>
+                </div>  
+            </div>
+            <div class="form-group row">
+                <label for="password" class="col-sm-3 col-form-label">Password:</label>
+                <div class="col-sm-9">
+                <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="security-question" class="col-sm-3 col-form-label">Security Question:</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="security-question" name="security-question" placeholder="Security Question" required>
+                </div>  
+            </div>
+            <div class="form-group row">
+                <label for="answer" class="col-sm-3 col-form-label">Answer:</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="answer" name="answer" placeholder="Answer" required>
+                </div>  
+            </div>
+            <div class="form-group row d-flex justify-content-between mx-auto">
+                <input type="submit" onclick="ccl()" id="submit-btn" class="btn btn-primary" value="Register"/>
+                  <input type="reset" class="btn btn-danger" value="Clear"/>
+                  <input type="button" onclick="redirectToLoginPage()" class="btn btn-info" value="LogIn"/>
+                  <!--<input type="button" onclick="ccl()" class="btn btn-info" value="test"/>-->
+             </div>
+<!--            <div class="form-group row d-flex justify-content-end mx-auto">
+                  <input type="button" class="btn btn-primary" value="Forgot PassWord?"/>
+             </div>-->
+
+        </form>
+    </div>
+    
+
+</body>
+</html>
